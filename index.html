@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Endeavours - Household & Electronic Goods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        },
+                        secondary: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12'
+                        },
+                        accent: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slide-up 0.8s ease-out',
+                        'ken-burns': 'ken-burns 8s ease-in-out infinite',
+                        'fade-in': 'fade-in 1s ease-in-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'pulse-glow': {
+                            '0%': { boxShadow: '0 0 20px rgba(250, 204, 21, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(250, 204, 21, 0.6)' }
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        'ken-burns': {
+                            '0%': { transform: 'scale(1) translate(0, 0)' },
+                            '25%': { transform: 'scale(1.08) translate(-2%, -1%)' },
+                            '50%': { transform: 'scale(1.05) translate(1%, 2%)' },
+                            '75%': { transform: 'scale(1.08) translate(-1%, 1%)' },
+                            '100%': { transform: 'scale(1) translate(0, 0)' }
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-primary-900/95 backdrop-blur-sm p-2 fixed top-0 left-0 w-full z-50 shadow-lg transition-all duration-300"
+        role="navigation" aria-label="Main navigation">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3" role="banner">
+                    <div class="w-16 h-16  flex items-center justify-center">
+                        <img src="./images/neon1.jpeg" alt="Neo Logo">
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-secondary-400 tracking-tight">Neo Endeavours</h1>
+                        <p class="text-secondary-200 text-xs font-medium">Fostering Trustworthy and Affordability</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home"
+                        class="text-secondary-200 hover:text-secondary-400 font-medium transition-colors duration-200 relative group">
+                        Home
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-400 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about"
+                        class="text-secondary-200 hover:text-secondary-400 font-medium transition-colors duration-200 relative group">
+                        About
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-400 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                    <a href="#services"
+                        class="text-secondary-200 hover:text-secondary-400 font-medium transition-colors duration-200 relative group">
+                        Services
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-400 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html"
+                        class="text-secondary-200 hover:text-secondary-400 font-medium transition-colors duration-200 relative group">
+                        Contact
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary-400 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex items-center space-x-3 ml-8">
+                        <a href="#login"
+                            class="text-secondary-200 hover:text-white font-medium border border-secondary-400/50 px-4 py-2 rounded-lg hover:bg-secondary-400/10 transition-all duration-200">
+                            Login
+                        </a>
+                        <a href="#get-started"
+                            class="bg-secondary-400 text-primary-900 font-semibold px-6 py-2 rounded-lg hover:bg-secondary-500 transform hover:scale-105 transition-all duration-200 shadow-md animate-pulse-glow">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle"
+                    class="lg:hidden p-2 text-secondary-400 hover:text-secondary-300 transition-colors"
+                    aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-6 pb-4">
+                <div class="bg-primary-800/50 backdrop-blur-sm rounded-xl p-6 space-y-4">
+                    <a href="#home"
+                        class="block text-secondary-200 hover:text-secondary-400 font-medium py-2 transition-colors">Home</a>
+                    <a href="#about"
+                        class="block text-secondary-200 hover:text-secondary-400 font-medium py-2 transition-colors">About</a>
+                    <a href="#services"
+                        class="block text-secondary-200 hover:text-secondary-400 font-medium py-2 transition-colors">Services</a>
+                    <a href="contact.html"
+                        class="block text-secondary-200 hover:text-secondary-400 font-medium py-2 transition-colors">Contact</a>
+                    <hr class="border-primary-700 my-4">
+
+                    <!-- Mobile Login and Get Started -->
+                    <div class="space-y-3">
+                        <a href="#login"
+                            class="flex items-center text-secondary-200 hover:text-white font-medium py-2 transition-colors">
+                            <i class="fas fa-user mr-3 text-primary-400"></i>
+                            Login
+                        </a>
+                        <a href="#get-started"
+                            class="flex items-center bg-secondary-400 text-primary-900 font-semibold px-4 py-2 rounded-lg hover:bg-secondary-500 transition-all text-center">
+                            <i class="fas fa-rocket mr-3"></i>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Slideshow -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Slideshow -->
+        <div class="absolute inset-0 z-0">
+            <div class="slideshow-container w-full h-full">
+                <!-- Slide 1 - Modern Kitchen -->
+                <div class="slide active absolute inset-0">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat animate-ken-burns">
+                        <img src="./images/neo2.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Slide 2 - Electronics -->
+                <div class="slide absolute inset-0 opacity-0">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat animate-ken-burns" >
+                       <img src="./images/neo3.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Slide 3 - Smart Home -->
+                <div class="slide absolute inset-0 opacity-0">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat animate-ken-burns">
+                        <img src="./images/neo4.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Slide 4 - Tools -->
+                <div class="slide absolute inset-0 opacity-0">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat animate-ken-burns">
+                        <img src="./images/neo5.jpg" alt="" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Overlay for better text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto animate-slide-up">
+                <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+                    Your Trusted Partner for
+                    <span class="bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">
+                        Smart Living
+                    </span>
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed drop-shadow-lg">
+                    Discover premium household and electronic goods that combine innovation, reliability, and affordability. 
+                    Transform your home with technology you can trust.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <a href="#services" 
+                        class="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        Shop Now
+                    </a>
+                    <a href="#about" 
+                        class="border-2 border-white/80 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <!-- Hero Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                    <div class="text-center backdrop-blur-sm bg-white/10 rounded-lg p-4">
+                        <div class="text-3xl font-bold text-secondary-400 mb-1">500+</div>
+                        <div class="text-white/80 text-sm">Happy Customers</div>
+                    </div>
+                    <div class="text-center backdrop-blur-sm bg-white/10 rounded-lg p-4">
+                        <div class="text-3xl font-bold text-secondary-400 mb-1">50+</div>
+                        <div class="text-white/80 text-sm">Premium Brands</div>
+                    </div>
+                    <div class="text-center backdrop-blur-sm bg-white/10 rounded-lg p-4">
+                        <div class="text-3xl font-bold text-secondary-400 mb-1">24/7</div>
+                        <div class="text-white/80 text-sm">Support</div>
+                    </div>
+                    <div class="text-center backdrop-blur-sm bg-white/10 rounded-lg p-4">
+                        <div class="text-3xl font-bold text-secondary-400 mb-1">99%</div>
+                        <div class="text-white/80 text-sm">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+            <button class="slide-indicator active w-4 h-4 rounded-full bg-white/90 hover:bg-white transition-all duration-300 shadow-lg border-2 border-white/30" data-slide="0"></button>
+            <button class="slide-indicator w-4 h-4 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300 shadow-lg border-2 border-white/30" data-slide="1"></button>
+            <button class="slide-indicator w-4 h-4 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300 shadow-lg border-2 border-white/30" data-slide="2"></button>
+            <button class="slide-indicator w-4 h-4 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300 shadow-lg border-2 border-white/30" data-slide="3"></button>
+        </div>
+        
+        <!-- Pause/Play Button -->
+        <button id="slideshow-control" class="absolute top-24 right-4 z-20 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300">
+            <i class="fas fa-pause"></i>
+        </button>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-primary-900 mb-4">Featured Categories</h3>
+                <p class="text-xl text-accent-600 max-w-2xl mx-auto">
+                    Explore our wide range of household and electronic products designed to enhance your lifestyle
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="bg-gradient-to-br from-primary-50 to-primary-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-primary-200/50">
+                        <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-home text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-primary-900 mb-3 text-center">Home Appliances</h4>
+                        <p class="text-accent-600 text-center">Kitchen appliances, cleaning tools, and home essentials for comfortable living</p>
+                    </div>
+                </div>
+                
+                <div class="group cursor-pointer">
+                    <div class="bg-gradient-to-br from-secondary-50 to-secondary-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-secondary-200/50">
+                        <div class="w-16 h-16 bg-secondary-600 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-tv text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-primary-900 mb-3 text-center">Electronics</h4>
+                        <p class="text-accent-600 text-center">Latest gadgets, smart devices, and entertainment systems for modern homes</p>
+                    </div>
+                </div>
+                
+                <div class="group cursor-pointer">
+                    <div class="bg-gradient-to-br from-accent-50 to-accent-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-accent-200/50">
+                        <div class="w-16 h-16 bg-accent-600 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-lightbulb text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-primary-900 mb-3 text-center">Smart Solutions</h4>
+                        <p class="text-accent-600 text-center">IoT devices, smart lighting, and automation systems for intelligent homes</p>
+                    </div>
+                </div>
+                
+                <div class="group cursor-pointer">
+                    <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-emerald-200/50">
+                        <div class="w-16 h-16 bg-emerald-600 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-tools text-2xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-primary-900 mb-3 text-center">Tools & Accessories</h4>
+                        <p class="text-accent-600 text-center">Quality tools, accessories, and maintenance equipment for every need</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-gradient-to-br from-primary-50 to-white">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-primary-900 mb-6">Why Choose Neo Endeavours?</h3>
+                    <p class="text-lg text-accent-600 mb-8 leading-relaxed">
+                        At Neo Endeavours, we believe that quality shouldn't come at a premium. We've built our reputation 
+                        on fostering trust through transparent pricing, reliable products, and exceptional customer service.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-primary-900 mb-2">Quality Assurance</h4>
+                                <p class="text-accent-600">Every product undergoes rigorous testing to ensure it meets our high standards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-dollar-sign text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-primary-900 mb-2">Affordable Pricing</h4>
+                                <p class="text-accent-600">Competitive prices without compromising on quality or service</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-secondary-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-headset text-white text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-primary-900 mb-2">24/7 Support</h4>
+                                <p class="text-accent-600">Our dedicated team is always ready to assist you with any queries</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- About CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="about.html" 
+                            class="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-lg text-center">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Learn More About Us
+                        </a>
+                        <a href="#services" 
+                            class="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 hover:text-white transition-all duration-300 text-center">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            View Our Services
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-primary-400 to-primary-600 rounded-3xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div class="bg-white rounded-2xl p-8 text-center transform -rotate-3">
+                            <div class="text-6xl text-secondary-400 mb-4">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-primary-900 mb-2">5+ Years</h4>
+                            <p class="text-accent-600">of trusted service in household and electronics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-primary-900 mb-4">Our Services</h3>
+                <p class="text-xl text-accent-600 max-w-2xl mx-auto">
+                    We provide comprehensive solutions for all your household and electronic needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-white to-primary-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary-100">
+                    <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shipping-fast text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-primary-900 mb-4">Fast Delivery</h4>
+                    <p class="text-accent-600 mb-6">Quick and reliable delivery service to get your products when you need them</p>
+                    <ul class="space-y-2 text-sm text-accent-600">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Same day delivery available</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Free delivery over Ksh 10,000</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Real-time tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-white to-secondary-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-secondary-100">
+                    <div class="w-16 h-16 bg-secondary-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-wrench text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-primary-900 mb-4">Installation & Setup</h4>
+                    <p class="text-accent-600 mb-6">Professional installation and setup services for all electronic products</p>
+                    <ul class="space-y-2 text-sm text-accent-600">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Expert technicians</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Warranty included</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Post-installation support</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-white to-accent-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-accent-100">
+                    <div class="w-16 h-16 bg-accent-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-undo text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-primary-900 mb-4">Easy Returns</h4>
+                    <p class="text-accent-600 mb-6">Hassle-free return policy to ensure your complete satisfaction</p>
+                    <ul class="space-y-2 text-sm text-accent-600">
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>30-day return window</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Free return pickup</li>
+                        <li class="flex items-center"><i class="fas fa-check text-secondary-400 mr-2"></i>Full refund guaranteed</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Services CTA -->
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-3xl p-8 mb-8">
+                    <h4 class="text-3xl font-bold text-primary-900 mb-4">Ready to Transform Your Home?</h4>
+                    <p class="text-xl text-accent-600 mb-6 max-w-2xl mx-auto">
+                        Discover our complete range of products and services. From kitchen appliances to smart home solutions, 
+                        we have everything you need to create your perfect living space.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="products.html" 
+                            class="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                            <i class="fas fa-shopping-bag mr-2"></i>
+                            Browse All Products
+                        </a>
+                        <a href="contact.html" 
+                            class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary-600 hover:text-white transition-all duration-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            Get Expert Advice
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 px-4 bg-gradient-to-br from-primary-900 to-primary-800 text-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-4">What Our Customers Say</h3>
+                <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+                    Don't just take our word for it - hear from our satisfied customers
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-secondary-400 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-900 font-bold">SK</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Kim</h4>
+                            <p class="text-primary-200 text-sm">Homeowner</p>
+                        </div>
+                    </div>
+                    <div class="text-secondary-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-primary-100">
+                        "Excellent service and quality products. The team helped me upgrade my entire kitchen with smart appliances. Highly recommended!"
+                    </p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-secondary-400 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-900 font-bold">MJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Johnson</h4>
+                            <p class="text-primary-200 text-sm">Tech Enthusiast</p>
+                        </div>
+                    </div>
+                    <div class="text-secondary-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-primary-100">
+                        "Fast delivery, competitive prices, and amazing customer support. Neo Endeavours is my go-to for all electronic needs."
+                    </p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-secondary-400 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-900 font-bold">AP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Anna Peterson</h4>
+                            <p class="text-primary-200 text-sm">Interior Designer</p>
+                        </div>
+                    </div>
+                    <div class="text-secondary-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-primary-100">
+                        "Professional installation service and quality products at unbeatable prices. They transformed my client's smart home vision into reality."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-primary-600 to-primary-800">
+        <div class="container mx-auto text-center">
+            <div class="max-w-2xl mx-auto">
+                <h3 class="text-3xl font-bold text-white mb-4">Stay Updated</h3>
+                <p class="text-primary-100 mb-8 text-lg">
+                    Subscribe to our newsletter for the latest products, deals, and tech insights
+                </p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" 
+                        class="flex-1 px-6 py-4 rounded-lg border-0 outline-none text-primary-900 placeholder-accent-500"
+                        placeholder="Enter your email address">
+                    <button type="submit" 
+                        class="bg-secondary-400 text-primary-900 px-8 py-4 rounded-lg font-semibold hover:bg-secondary-500 transform hover:scale-105 transition-all duration-300 whitespace-nowrap">
+                        Subscribe Now
+                    </button>
+                </form>
+                
+                <p class="text-primary-200 text-sm mt-4">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-primary-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-secondary-400">Neo Endeavours</h4>
+                            <p class="text-primary-200 text-xs">Trusted & Affordable</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-200 mb-6">
+                        Your trusted partner for premium household and electronic goods. Quality, affordability, and reliability in every product.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/emmyopatibin.wexa" class="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="Emmanuelopati01" class="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="favoured Emmanuel Opati" class="w-10 h-10 bg-primary-700 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-primary-200 hover:text-secondary-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-primary-200 hover:text-secondary-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-primary-200 hover:text-secondary-400 transition-colors">Services</a></li>
+                        <li><a href="contact.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-primary-200 hover:text-secondary-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-primary-200 hover:text-secondary-400 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Categories</h4>
+                    <ul class="space-y-3">
+                        <li><a href="products.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Home Appliances</a></li>
+                        <li><a href="products.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Electronics</a></li>
+                        <li><a href="products.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Smart Solutions</a></li>
+                        <li><a href="products.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Tools & Accessories</a></li>
+                        <li><a href="products.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Kitchen Essentials</a></li>
+                        <li><a href="products.html" class="text-primary-200 hover:text-secondary-400 transition-colors">Smart Home</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-secondary-400"></i>
+                            <span class="text-primary-200">Njoro, Nakuru, Kenya</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-secondary-400"></i>
+                            <span class="text-primary-200">+254 713-530-418</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-secondary-400"></i>
+                            <span class="text-primary-200">emmanuelopati095@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-secondary-400"></i>
+                            <span class="text-primary-200">Mon-Sat: 8AM-8PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-primary-700 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-primary-200 text-sm mb-4 md:mb-0">
+                    © 2025 Neo Endeavours. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-primary-200 hover:text-secondary-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-primary-200 hover:text-secondary-400 transition-colors">Terms of Service</a>
+                    <a href="#" class="text-primary-200 hover:text-secondary-400 transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" 
+        class="fixed bottom-6 right-6 w-12 h-12 bg-secondary-400 text-primary-900 rounded-full shadow-lg hover:bg-secondary-500 transform hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.slide-indicator');
+        const totalSlides = slides.length;
+        let slideshowInterval;
+        let isPlaying = true;
+
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                    indicator.classList.remove('bg-white/40');
+                    indicator.classList.add('bg-white/90');
+                } else {
+                    indicator.classList.remove('active');
+                    indicator.classList.remove('bg-white/90');
+                    indicator.classList.add('bg-white/40');
+                }
+            });
+        }
+
+        function showSlide(index) {
+            // Hide all slides with smooth transition
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.style.opacity = '1';
+                    slide.classList.add('active');
+                } else {
+                    slide.style.opacity = '0';
+                    slide.classList.remove('active');
+                }
+            });
+            
+            currentSlide = index;
+            updateIndicators();
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function startSlideshow() {
+            slideshowInterval = setInterval(nextSlide, 5000);
+            isPlaying = true;
+            document.getElementById('slideshow-control').innerHTML = '<i class="fas fa-pause"></i>';
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideshowInterval);
+            isPlaying = false;
+            document.getElementById('slideshow-control').innerHTML = '<i class="fas fa-play"></i>';
+        }
+
+        // Initialize slideshow
+        showSlide(0);
+        startSlideshow();
+
+        // Pause/Play button
+        document.getElementById('slideshow-control').addEventListener('click', () => {
+            if (isPlaying) {
+                stopSlideshow();
+            } else {
+                startSlideshow();
+            }
+        });
+
+        // Slide indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                stopSlideshow();
+                setTimeout(() => {
+                    startSlideshow();
+                }, 100);
+            });
+        });
+
+        // Pause on hover
+        const heroSection = document.getElementById('home');
+        heroSection.addEventListener('mouseenter', () => {
+            if (isPlaying) {
+                stopSlideshow();
+            }
+        });
+        
+        heroSection.addEventListener('mouseleave', () => {
+            if (!isPlaying) {
+                startSlideshow();
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            
+            const isExpanded = !mobileMenu.classList.contains('hidden');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                        menuToggle.setAttribute('aria-expanded', false);
+                    }
+                }
+            });
+        });
+
+        // Back to top button functionality
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Newsletter form handler
+        document.querySelector('section:nth-last-of-type(2) form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (!email) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+
+        // Add animation classes on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
